@@ -10,42 +10,13 @@ class FrontProductFeatureTest extends TestCase
     /** @test */
     public function it_can_show_the_product()
     {
-        dd('conc : ' .env('DB_CONNECTION') . 'db : ' . env('DB_DATABASE') . 'pass : ' . env('DB_PASSWORD') . ' user : ' . 
-    env('DB_USERNAME') . 'port : ' .env('DB_PORT')  . 'host : ' . env('DB_HOST'));
-        $product = factory(Product::class)->create();
+        $asd = 'conc : ' .env('DB_CONNECTION') . 'db : ' . env('DB_DATABASE') . 'pass : ' . env('DB_PASSWORD') . ' user : ' . 
+        env('DB_USERNAME') . 'port : ' .env('DB_PORT')  . 'host : ' . env('DB_HOST');
+        dd($asd);
 
-        $this
-            ->get(route('front.get.product', str_slug($product->name)))
-            ->assertStatus(200)
-            ->assertSee($product->name)
-            ->assertSee($product->description)
-            ->assertSee("$product->quantity")
-            ->assertSee("$product->price");
+        dump($asd);
+        $this->assertStringContainsString($asd)
+        
     }
 
-    /** @test */
-    public function it_should_not_throw_error_even_the_query_is_empty()
-    {
-        $product = factory(Product::class)->create();
-
-        $this
-            ->get(route('search.product', ['q' => '']))
-            ->assertStatus(200)
-            ->assertSee($product->name)
-            ->assertSee("$product->quantity")
-            ->assertSee("$product->price");
-    }
-    
-    /** @test */
-    public function it_can_search_for_a_product()
-    {
-        $product = factory(Product::class)->create();
-
-        $this
-            ->get(route('search.product', ['q' => str_limit($product->name, 4, '')]))
-            ->assertStatus(200)
-            ->assertSee($product->name)
-            ->assertSee("$product->quantity")
-            ->assertSee("$product->price");
-    }
 }
