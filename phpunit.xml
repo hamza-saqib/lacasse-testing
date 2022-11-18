@@ -33,7 +33,7 @@
         <env name="DB_PORT" value="3306"/>
         <env name="DB_DATABASE" value="lacasse_testing"/>
         <env name="DB_USER" value="root"/>
-        <env name="DB_PASSWORD" value="root"/>
+        <env name="DB_PASSWORD" value="password"/>
         <env name="API_DEBUG" value="false"/>
         <env name="MAIL_DRIVER" value="log"/>
         <env name="COUNTRY_ID" value="1"/>
