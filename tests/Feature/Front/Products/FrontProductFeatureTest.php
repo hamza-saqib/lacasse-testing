@@ -15,7 +15,7 @@ class FrontProductFeatureTest extends TestCase
         dd($asd);
 
         dump($asd);
-        $this->assertStringContainsString($asd);
+        $this->assertStringContainsString($asd, 'asd');
         
     }
 
