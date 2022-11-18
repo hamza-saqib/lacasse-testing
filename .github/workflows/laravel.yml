@@ -41,7 +41,7 @@ jobs:
       run: php artisan config:clear
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
-        DB_HOST: 127.0.0.1
+        DB_HOST: 127.18.0.1
         DB_CONNECTION: mysql
         DB_PORT: 3306
         DB_USER: root
