@@ -25,6 +25,8 @@ use Illuminate\Support\Facades\Artisan;
 
 abstract class TestCase extends BaseTestCase
 {
+    use CreatesApplication;
+
     
 
     /**
@@ -34,7 +36,7 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
-        
+       
     }
 
     public function tearDown()
