@@ -31,10 +31,4 @@ jobs:
     - name: Create Database
       run: mysql --host 127.0.0.1 --port 3306 -uroot -proot -e "CREATE DATABASE IF NOT EXISTS lacasse_testing;"
     - name: Execute tests (Unit and Feature tests) via PHPUnit
-      env:
-        DB_CONNECTION: mysql
-        DB_PORT: 3306
-        DB_USER: root
-        DB_PASSWORD: root
-        DB_DATABASE: test
       run: vendor/bin/phpunit
