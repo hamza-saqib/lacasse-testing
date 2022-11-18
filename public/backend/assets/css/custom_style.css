@@ -1,0 +1,47 @@
+.please_wait {
+    background: rgba(255, 255, 255, 0.8) url(../images/Spinner.gif) no-repeat scroll center center;
+    bottom: 0;
+    float: left;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+.not-found{
+    color: #f00;
+    float: left;
+    background: #6f8194;
+    display: inline-block;
+    width: auto;
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-style: italic;
+    margin-top: 6px;
+    color: #fff;
+}
+.waves-effect{
+    overflow: inherit;
+}
+.waves-effect span.label{
+    font-size: 9px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #e66454;
+    color: #fff;
+    line-height: 9px;
+    padding: 6px 0;
+    height: 20px;
+    text-align: center;
+    width: 20px;
+    border-radius: 50%;
+}
+
+
+.ck-editor__editable {
+    min-height: 500px;
+    width: 100%
+}
+

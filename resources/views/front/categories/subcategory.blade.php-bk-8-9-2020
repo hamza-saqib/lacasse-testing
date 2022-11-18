@@ -1,0 +1,333 @@
+@extends('layouts.front.app')
+@section('content')
+@section('css')
+<style type="text/css">
+   .Thumbnail img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+/*.imgclass{
+  width: 400px
+}*/
+.imgclass img{
+  width: 100%
+}
+.Thumbnail img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+.imgclass {
+    width: 100%;
+    float: left;
+}
+
+.imgclass img {
+    width: 100%;
+    max-width: 500px;
+    margin: 50px auto;
+    display: block;
+}
+</style>
+@endsection
+<!-- ========  Main  ======== -->
+   <div class="row  prefference-tabs">
+      <div class="col-md-12 prefference-tabs-content">
+         <ul class="nav nav-pills mb-3 prefference" id="pills-tab" role="tablist">
+            @if(empty($make))
+              <li class="nav-item prefference-box no-make" role="presentation">
+               <a class="nav-link active" href= "{{ route('front.subcategory.slug') }}">
+                  <h2><span>1</span>Make</h2>
+                  <section>
+                     <span class="car-model">Select make below</span>
+                  </section>
+               </a>
+              </li>
+              <li class="nav-item prefference-box no-select" role="presentation">
+                <h2><span>2</span>Model</h2>
+                <section>
+                   <span class="car-model"></span>
+                </section>
+              </li>
+              <li class="nav-item prefference-box no-select" role="presentation">
+                <h2><span>3</span>Part Group</h2>
+                <section>
+                   <span class="car-model"></span>
+                </section>
+              </li>
+              <li class="nav-item prefference-box no-select" role="presentation">
+                <h2><span>4</span>Part</h2>
+                <section>
+                   <span class="car-model"></span>
+                </section>
+              </li>
+            @else
+              <li class="nav-item prefference-box" role="presentation">
+                <?php 
+                  $class ='';
+                  $class = $cateslug=='' ? 'active' : ''
+                ?>
+                <a class="nav-link {{$class}}" href= "{{ route('front.subcategory.slug') }}">
+                  <h2><span>1</span>Make</h2>
+                  <section>
+                    <label>Selected make:</label>
+                    <span class="car-model">
+                      <img src="{{asset('images/ico_arrow_right.png')}} "> {{ ucwords($make) }}</span>
+                    <span>change make</span>
+                  </section>
+                </a>
+              </li>
+              <li class="nav-item prefference-box no-make" role="presentation">
+               <a class="nav-link active" href= "{{ route('front.subcategory.slug') }}">
+                  <h2><span>2</span>Model</h2>
+                  <section>
+                     <span class="car-model">Select model below</span>
+                  </section>
+               </a>
+              </li>
+              <li class="nav-item prefference-box no-select" role="presentation">
+                <h2><span>3</span>Part Group</h2>
+                <section>
+                   <span class="car-model"></span>
+                </section>
+              </li>
+              <li class="nav-item prefference-box no-select" role="presentation">
+                <h2><span>4</span>Part</h2>
+                <section>
+                   <span class="car-model"></span>
+                </section>
+              </li>
+            @endif
+            
+             <?php /*
+                  $class ='';
+                  $class = $cateslug ? 'active' : ''
+               ?>
+            <li class="nav-item prefference-box" role="presentation">
+               <a class="nav-link {{$class}}" href= "#">
+               <!-- <a class="nav-link" id="pills-home-tab" data-toggle="pill" href="#" role="tab" aria-controls="pills-home" aria-selected="false"> -->
+                  <h2><span>2</span>Model</h2>
+                  <section>
+                     <label>Selected make:</label>
+                     <span class="car-model"><img src="{{asset('images/ico_arrow_right.png')}} "> Fiat</span>
+                     <span>change make</span>
+                  </section>
+               </a>
+            </li>
+            <li class="nav-item prefference-box" role="presentation">
+               <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+                  <h2><span>3</span>Part Group</h2>
+                  <section>
+                     <label>Selected make:</label>
+                     <span class="car-model"><img src="{{asset('images/ico_arrow_right.png')}} "> Fiat</span>
+                     <span>change make</span>
+                  </section>
+               </a>
+            </li>
+            <li class="nav-item prefference-box" role="presentation">
+               <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">
+                  <h2><span>4</span>Part</h2>
+                  <section>
+                     <label>Selected make:</label>
+                     <span class="car-model"><img src="{{asset('images/ico_arrow_right.png')}} "> Fiat</span>
+                     <span>change make</span>
+                  </section>
+               </a>
+            </li>
+            */?>
+         </ul>
+         <div class="tab-content" id="pills-tabContent">
+            <!-- =================  Tab 1 ================= -->
+            @if($cateslug =='')
+            <div class="tab-pane active">
+               <div class="row make-model">
+                  <div class="col-md-12 make-model-list" >
+                    <ul>
+                    <?php
+                    $previous = null;
+                    foreach($subcategory as $value) {
+                        $firstLetter = substr($value->name, 0, 1);
+                        if($previous !== $firstLetter){
+                          echo "<li>";
+                          echo "<span>".$firstLetter."</span>";
+                        }
+                        $previous = $firstLetter;
+                        $url =route('front.subcategory.slug',[$value->slug]);
+                        echo "<a href=$url>".strtolower($value->name)."</a> &nbsp";
+                         if($previous !== $firstLetter){
+                          echo "</li>";
+                        }
+                        
+                    }
+                    //   $previousalphabet = 'A';
+                    //   $words = array();
+                    //   // $initial_counter  = 1;
+                    //   // $link ='';
+                    //   foreach($subcategory as $value) {
+                    //     $firstalphabet = substr($value->name, 0, 1);
+                    //     $firstalphabet = strtoupper($firstalphabet);
+                       
+                    //     }   
+                    // }
+                    ?>
+                  </ul>
+                  </div>
+               </div>
+            </div>
+            @endif
+            <!-- =================  Tab 1 ================= -->
+            @if($cateslug)
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+               <div class="row car-model">
+                  <div class="col-md-12 car-model-list" >
+                     <ul>
+                        @if(!empty($subcategory))
+                          @foreach($subcategory as $key=>$value)
+                            <li>
+                              <section><b>{{$value->name}}</b></section>
+                              <div>
+                              @if(!empty($models))
+                                @foreach($models as $key1=>$value1)
+                                  <span><a href="{{ route('front.getpartgroups.slug',[$value1->slug]) }}" class="invert">{{$value1->name}}<b></b></a></span>
+                                @endforeach
+                              @endif
+                            </div>
+                            </li>
+                          @endforeach
+                        @endif
+                       <!--  <li>
+                           <section><b>156</b></section>
+                           <span><a href="#" class="invert">ALFA 156 <b>(All)</b></a></span>
+                        </li>
+                        <li>
+                           <section><b>156</b></section>
+                           <span><a href="#" class="invert">ALFA 156 <b>(All)</b></a></span>
+                        </li>
+                        <li>
+                           <section><b>156</b></section>
+                           <span><a href="#" class="invert">ALFA 156 <b>(All)</b></a></span>
+                        </li>
+                        <li>
+                           <section><b>156</b></section>
+                           <span><a href="#" class="invert">ALFA 156 <b>(All)</b></a></span>
+                        </li> -->
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            @endif
+            <!-- =================  Tab 2 ================= -->
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+               <div class="row cart-part">
+                  <div class="col-md-3 cart-part-box" >
+                     <div class="cart-part-list">
+                        <form >
+                           <ul class="check-list">
+                              <li>
+                                 <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                                 <label for="vehicle1">Used pars - <span>325</span></label>
+                              </li>
+                              <li>
+                                 <input type="checkbox" id="vehicle2" name="vehicle1" value="Bike">
+                                 <label for="vehicle2">New alt. parts - <span>325</span></label>
+                              </li>
+                              <li>
+                                 <input type="checkbox" id="vehicle3" name="vehicle1" value="Bike">
+                                 <label for="vehicle3">Renovated parts -  <span>325</span></label>
+                              </li>
+                              <li>
+                                 <input type="checkbox" id="vehicle4" name="vehicle1" value="Bike">
+                                 <label for="vehicle4">New original parts -  <span>325</span></label>
+                              </li>
+                           </ul>
+                        </form>
+                        <form class="form-inline my-lg-0">
+                           <h6>Text search part name:</h6>
+                           <input class="form-control " type="search" placeholder="Ert Z-Nummer" aria-label="Search">
+                        </form>
+                        <ul>
+                           <li><a href="#">Air conditioning / Heating</a></li>
+                           <li><a href="#">Air conditioning / Heating</a></li>
+                           <li><a href="#">Air conditioning / Heating</a></li>
+                           <li><a href="#">Air conditioning / Heating</a></li>
+                           <li><a href="#">Air conditioning / Heating</a></li>
+                           <li><a href="#">Air conditioning / Heating</a></li>
+                           <li><a href="#">Air conditioning / Heating</a></li>
+                           <li><a href="#">Air conditioning / Heating</a></li>
+                           <li><a href="#">Air conditioning / Heating</a></li>
+                           <li><a href="#">Air conditioning / Heating</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-md-9">
+                     <div class="imgclass">
+                       <img src=" {{asset('images/parts/126.jpg')}}" alt="Forest">
+                    </div>
+                     <div class="Thumbnail">
+                          <img class="ishover" src="{{asset('images/parts/126width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/101width125.jpg')}} " alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/102width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/103width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/104width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/105width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/106width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/107width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/108width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/109width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/110width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/111width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/112width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/113width125.jpg')}}" alt="Forest" style="width:150px">
+
+                          <img class="ishover" src="{{asset('images/parts/114width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/115width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/116width125.jpg')}}" alt="Forest" style="width:150px">
+
+                          <img class="ishover" src="{{asset('images/parts/117width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/118width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/119width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/120width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/121width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/122width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/124width125.jpg')}}" alt="Forest" style="width:150px">
+                          <img class="ishover" src="{{asset('images/parts/125width125.jpg')}}" alt="Forest" style="width:150px">
+                        </div>
+                  </div>
+               </div>
+            </div>
+            <!-- =================  Tab 3 ================= -->
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+               <div class="row cart-part-2">
+                  <div class="col-md-8 part-list">
+                     <ul>
+                        <li><a href="#">Jack</a></li>
+                        <li><a href="#">Towing Eye</a></li>
+                        <li><a href="#">Towing Hook</a></li>
+                        <li><a href="#">Roof railing / Roof rack</a></li>
+                        <li><a href="#">Inner shield</a></li>
+                        <li><a href="#">Shield</a></li>
+                        <li><a href="#">Strip Rear / Rear hatch</a></li>
+                        <li><a href="#">Roof / Glass roof</a></li>
+                        <li><a href="#">Body</a></li>
+                        <li><a href="#">Skirt package</a></li>
+                        <li><a href="#">Side skirt</a></li>
+                        <li><a href="#">Rear part / Body</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-md-4 cart-part-pic">
+                     <img src="{{asset('images/carr.jpg')}}" alt="">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+@endsection
+@section('js')
+<script type="text/javascript">
+  $( ".Thumbnail img" ).mouseover(function() {
+    //alert($(this).attr('src'));
+    $('.imgclass img').attr('src',$(this).attr('src'));
+  });
+</script>
+@endsection

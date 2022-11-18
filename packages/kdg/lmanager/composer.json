@@ -1,0 +1,6 @@
+{
+    "name": "kdg/lmanager",
+    "description": "Language Manager for Laravel",
+    "license": "1.0",
+    "require": {}
+}

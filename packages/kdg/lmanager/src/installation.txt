@@ -1,0 +1,8 @@
+
+
+Install datatable from here
+
+https://github.com/yajra/laravel-datatables
+
+
+https://gitter.im/yajra/laravel-datatables

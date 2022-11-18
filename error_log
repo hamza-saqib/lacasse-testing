@@ -1,0 +1,33 @@
+[01-Nov-2020 04:27:18 UTC] PHP Warning:  require(/home/lacassem/public_html/../bootstrap/autoload.php): failed to open stream: No such file or directory in /home/lacassem/public_html/index.php on line 22
+[01-Nov-2020 04:27:18 UTC] PHP Warning:  require(/home/lacassem/public_html/../bootstrap/autoload.php): failed to open stream: No such file or directory in /home/lacassem/public_html/index.php on line 22
+[01-Nov-2020 04:27:18 UTC] PHP Fatal error:  require(): Failed opening required '/home/lacassem/public_html/../bootstrap/autoload.php' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/lacassem/public_html/index.php on line 22
+[01-Nov-2020 04:30:22 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:234
+Stack trace:
+#0 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(397): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(374): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(289): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(188): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Component\HttpKernel\Exception\HttpEx in /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 234
+[01-Nov-2020 04:30:24 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:234
+Stack trace:
+#0 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(397): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(374): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(289): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(188): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Component\HttpKernel\Exception\HttpEx in /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 234
+[01-Nov-2020 04:30:24 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:234
+Stack trace:
+#0 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(397): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(374): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(289): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(188): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Component\HttpKernel\Exception\HttpEx in /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 234
+[01-Nov-2020 04:30:25 UTC] PHP Fatal error:  Uncaught RuntimeException: A facade root has not been set. in /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:234
+Stack trace:
+#0 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(397): Illuminate\Support\Facades\Facade::__callStatic('replaceNamespac...', Array)
+#1 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(374): Illuminate\Foundation\Exceptions\Handler->registerErrorViewPaths()
+#2 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(289): Illuminate\Foundation\Exceptions\Handler->renderHttpException(Object(Symfony\Component\HttpKernel\Exception\HttpException))
+#3 /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(188): Illuminate\Foundation\Exceptions\Handler->prepareResponse(Object(Illuminate\Http\Request), Object(Symfony\Component\HttpKernel\Exception\HttpEx in /home/lacassem/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php on line 234
+[03-Nov-2020 06:40:42 UTC] PHP Warning:  require(/home/lacassem/public_html/../bootstrap/autoload.php): failed to open stream: No such file or directory in /home/lacassem/public_html/index.php on line 22
+[03-Nov-2020 06:40:42 UTC] PHP Warning:  require(/home/lacassem/public_html/../bootstrap/autoload.php): failed to open stream: No such file or directory in /home/lacassem/public_html/index.php on line 22
+[03-Nov-2020 06:40:42 UTC] PHP Fatal error:  require(): Failed opening required '/home/lacassem/public_html/../bootstrap/autoload.php' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/lacassem/public_html/index.php on line 22
+[03-Nov-2020 06:40:46 UTC] PHP Warning:  require(/home/lacassem/public_html/../bootstrap/autoload.php): failed to open stream: No such file or directory in /home/lacassem/public_html/index.php on line 22
+[03-Nov-2020 06:40:46 UTC] PHP Warning:  require(/home/lacassem/public_html/../bootstrap/autoload.php): failed to open stream: No such file or directory in /home/lacassem/public_html/index.php on line 22
+[03-Nov-2020 06:40:46 UTC] PHP Fatal error:  require(): Failed opening required '/home/lacassem/public_html/../bootstrap/autoload.php' (include_path='.:/opt/cpanel/ea-php72/root/usr/share/pear') in /home/lacassem/public_html/index.php on line 22

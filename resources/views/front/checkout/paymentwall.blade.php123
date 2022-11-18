@@ -1,0 +1,28 @@
+<script src="https://api.paymentwall.com/brick/build/brick-default.1.5.0.min.js"> </script>
+<div id="payment-form-container"> </div>
+{{-- 
+ _token: "{{ csrf_token() }}"
+ {{route('checkout.paymentwallresponse')}}
+ --}}
+<script>
+  var brick = new Brick({
+    public_key: 't_adb0dbfbc2d22767f99502c3c1faa1', // please update it to Brick live key before launch your project
+    amount: 9.99,
+    currency: 'USD',
+    container: 'payment-form-container',
+    action: "testpay.php",
+    form: {
+      merchant: 'YOUR COMPANY',
+      product: 'Product Name',
+      pay_button: 'Pay',
+      show_zip: true, // show zip code field 
+      show_cardholder: true // show card holder name field
+    }
+  });
+
+  brick.showPaymentForm(function(data) {
+    // handle success
+  }, function(errors) {
+    // handle errors
+  });
+</script>
