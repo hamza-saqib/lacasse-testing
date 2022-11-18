@@ -24,12 +24,7 @@ jobs:
       with:
         php-version: 7.3
     - uses: actions/checkout@v2
-    - name: Verify unittest DB exists
-      run: mysql --host 127.0.0.1 --port 3306 -uroot -e "SHOW DATABASES LIKE 'unittest'"
-    - name: Create 2nd Database
-      run: mysql --host 127.0.0.1 --port 3306 -uroot -e "CREATE DATABASE IF NOT EXISTS unittest_second;"
-    - name: Verify unittest_second DB exists
-      run: mysql --host 127.0.0.1 --port 3306 -uroot -e "SHOW DATABASES LIKE 'unittest_second'"
+
     - name: Copy the .env
       run: cp .env.example .env
     - name: Install dependencies
