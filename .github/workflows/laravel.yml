@@ -25,10 +25,10 @@ jobs:
       with:
         php-version: 7.3
     - uses: actions/checkout@v3
-    - name: Verify unittest DB exists
-      run: mysql --host 127.0.0.1 --port 3306 -uroot -e "SHOW DATABASES LIKE 'lacasse_testing'"
-    - name: Create 2nd Database
-      run: mysql --host 127.0.0.1 --port 3306 -uroot -e "CREATE DATABASE IF NOT EXISTS lacasse_testing;"
+    # - name: Verify unittest DB exists
+    #   run: mysql --host 127.0.0.1 --port 3306 -uroot -e "SHOW DATABASES LIKE 'lacasse_testing'"
+    # - name: Create 2nd Database
+    #   run: mysql --host 127.0.0.1 --port 3306 -uroot -e "CREATE DATABASE IF NOT EXISTS lacasse_testing;"
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
