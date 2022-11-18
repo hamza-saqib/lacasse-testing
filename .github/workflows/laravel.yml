@@ -39,10 +39,4 @@ jobs:
     - name: Clear Configuration
       run: php artisan config:clear
     - name: Execute tests (Unit and Feature tests) via PHPUnit
-      env:
-        DB_CONNECTION: mysql12
-        DB_PORT: 330612
-        DB_USER: root12
-        DB_PASSWORD: '12'
-        DB_DATABASE: lacasse_testing12
       run: ./vendor/bin/phpunit
