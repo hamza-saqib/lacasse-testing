@@ -28,6 +28,8 @@ jobs:
 #       run: sudo service mysql stop
     - name: Start Ubuntu MySQL (SUDO)
       run: sudo service mysql start
+    - name: Create Database
+      run: mysql --host 127.0.0.1 --port 3306 -uroot -proot -e "CREATE DATABASE IF NOT EXISTS lacasse_testing;"
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
         DB_CONNECTION: mysql
