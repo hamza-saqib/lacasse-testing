@@ -27,5 +27,16 @@ abstract class TestCase extends BaseTestCase
 {
     
 
-    
+    /**
+     * Set up the test
+     */
+    public function setUp()
+    {
+        
+    }
+
+    public function tearDown()
+    {
+        
+    }
 }
