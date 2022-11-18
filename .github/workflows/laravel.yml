@@ -28,8 +28,6 @@ jobs:
 #       run: sudo service mysql stop
     - name: Start Ubuntu MySQL (SUDO)
       run: sudo service mysql start
-    - name: Create Database
-      run: php artisan migrate --force
     - name: Execute tests (Unit and Feature tests) via PHPUnit
       env:
         DB_CONNECTION: mysql
